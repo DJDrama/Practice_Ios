@@ -14,10 +14,10 @@ struct ConversationsView: View {
     var body: some View {
         ZStack(alignment: .bottomTrailing){
             ScrollView{
-                VStack{
+                LazyVStack{
                     ForEach(0..<20) { _ in
                         NavigationLink(
-                            destination: Text("Destination"),
+                            destination: ChatView(),
                             label: {
                                 ConversationCell()
                             })
