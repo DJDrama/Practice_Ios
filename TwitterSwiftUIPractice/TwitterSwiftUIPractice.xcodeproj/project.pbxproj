@@ -11,6 +11,7 @@
 		22F7D4F225A5674B00997FCD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F7D4F125A5674B00997FCD /* ContentView.swift */; };
 		22F7D4F425A5674D00997FCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22F7D4F325A5674D00997FCD /* Assets.xcassets */; };
 		22F7D4F725A5674D00997FCD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22F7D4F625A5674D00997FCD /* Preview Assets.xcassets */; };
+		22F7D50325A57C3F00997FCD /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F7D50225A57C3F00997FCD /* FeedView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		22F7D4F325A5674D00997FCD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22F7D4F625A5674D00997FCD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		22F7D4F825A5674D00997FCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22F7D50225A57C3F00997FCD /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +54,10 @@
 		22F7D4EE25A5674B00997FCD /* TwitterSwiftUIPractice */ = {
 			isa = PBXGroup;
 			children = (
+				22F7D4FF25A57C0F00997FCD /* Model */,
+				22F7D50025A57C1A00997FCD /* View */,
+				22F7D50125A57C2000997FCD /* ViewModels */,
 				22F7D4EF25A5674B00997FCD /* TwitterSwiftUIPracticeApp.swift */,
-				22F7D4F125A5674B00997FCD /* ContentView.swift */,
 				22F7D4F325A5674D00997FCD /* Assets.xcassets */,
 				22F7D4F825A5674D00997FCD /* Info.plist */,
 				22F7D4F525A5674D00997FCD /* Preview Content */,
@@ -67,6 +71,29 @@
 				22F7D4F625A5674D00997FCD /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		22F7D4FF25A57C0F00997FCD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		22F7D50025A57C1A00997FCD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				22F7D4F125A5674B00997FCD /* ContentView.swift */,
+				22F7D50225A57C3F00997FCD /* FeedView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		22F7D50125A57C2000997FCD /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +166,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22F7D4F225A5674B00997FCD /* ContentView.swift in Sources */,
+				22F7D50325A57C3F00997FCD /* FeedView.swift in Sources */,
 				22F7D4F025A5674B00997FCD /* TwitterSwiftUIPracticeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
