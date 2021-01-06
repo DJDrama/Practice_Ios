@@ -11,8 +11,17 @@ struct ConversationsView: View {
     @State // reactive
     var isShowingNewMessageView = false
     
+    @State
+    var showChat = false
+    
     var body: some View {
         ZStack(alignment: .bottomTrailing){
+            NavigationLink(
+                destination: ChatView(),
+                isActive: $showChat,
+                label: {
+                    
+                })
             ScrollView{
                 LazyVStack{
                     ForEach(0..<20) { _ in
@@ -36,9 +45,8 @@ struct ConversationsView: View {
             .foregroundColor(.white)
             .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
             .padding()
-            .sheet(isPresented: $isShowingNewMessageView
-                   , content: {
-                SearchView()
+            .sheet(isPresented: $isShowingNewMessageView , content: {
+                NewMessageView(show: $isShowingNewMessageView, startChat: $showChat)
             })
         }
     }

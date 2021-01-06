@@ -22,6 +22,8 @@
 		22F7D51E25A5A3AB00997FCD /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F7D51D25A5A3AB00997FCD /* ChatView.swift */; };
 		22F7D52125A5AE9800997FCD /* ChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F7D52025A5AE9800997FCD /* ChatBubble.swift */; };
 		22F7D52425A5B15200997FCD /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F7D52325A5B15200997FCD /* Message.swift */; };
+		22F7D52725A5B44700997FCD /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F7D52625A5B44700997FCD /* MessageView.swift */; };
+		22F7D52A25A5B55D00997FCD /* NewMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F7D52925A5B55D00997FCD /* NewMessageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		22F7D51D25A5A3AB00997FCD /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		22F7D52025A5AE9800997FCD /* ChatBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubble.swift; sourceTree = "<group>"; };
 		22F7D52325A5B15200997FCD /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		22F7D52625A5B44700997FCD /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		22F7D52925A5B55D00997FCD /* NewMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +134,8 @@
 				22F7D51A25A5A32F00997FCD /* MessageInputView.swift */,
 				22F7D51D25A5A3AB00997FCD /* ChatView.swift */,
 				22F7D52025A5AE9800997FCD /* ChatBubble.swift */,
+				22F7D52625A5B44700997FCD /* MessageView.swift */,
+				22F7D52925A5B55D00997FCD /* NewMessageView.swift */,
 			);
 			path = Messages;
 			sourceTree = "<group>";
@@ -212,9 +218,11 @@
 				22F7D4F025A5674B00997FCD /* TwitterSwiftUIPracticeApp.swift in Sources */,
 				22F7D52125A5AE9800997FCD /* ChatBubble.swift in Sources */,
 				22F7D50725A580AE00997FCD /* TweetCell.swift in Sources */,
+				22F7D52A25A5B55D00997FCD /* NewMessageView.swift in Sources */,
 				22F7D52425A5B15200997FCD /* Message.swift in Sources */,
 				22F7D50D25A58F6200997FCD /* SearchBar.swift in Sources */,
 				22F7D51025A5971800997FCD /* UserCell.swift in Sources */,
+				22F7D52725A5B44700997FCD /* MessageView.swift in Sources */,
 				22F7D51825A59A0F00997FCD /* ConversationCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
