@@ -23,9 +23,11 @@ struct ConversationCell: View {
                         .font(.system(size: 14, weight: .semibold))
                     
                     Text("Longer messages text to see what happens w hen i do this.")
-                        .font(.system(size: 15))
+                        .font(.system(size: 14))
                         .lineLimit(2)
-                }.padding(.trailing)
+                }
+                .foregroundColor(.black)
+                .padding(.trailing)
             }
             Divider()
         }
