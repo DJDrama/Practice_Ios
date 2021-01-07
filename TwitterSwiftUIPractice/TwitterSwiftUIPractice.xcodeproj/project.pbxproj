@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22A35D0025A71A8C00AEAE03 /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A35CFF25A71A8C00AEAE03 /* UserProfileView.swift */; };
+		22A35D0325A71B2900AEAE03 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A35D0225A71B2900AEAE03 /* ProfileHeaderView.swift */; };
+		22A35D0625A71B3B00AEAE03 /* ProfileActionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A35D0525A71B3B00AEAE03 /* ProfileActionButtonView.swift */; };
+		22A35D0A25A71B4D00AEAE03 /* FilterButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A35D0925A71B4D00AEAE03 /* FilterButtonView.swift */; };
 		22F7D4F025A5674B00997FCD /* TwitterSwiftUIPracticeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F7D4EF25A5674B00997FCD /* TwitterSwiftUIPracticeApp.swift */; };
 		22F7D4F225A5674B00997FCD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F7D4F125A5674B00997FCD /* ContentView.swift */; };
 		22F7D4F425A5674D00997FCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22F7D4F325A5674D00997FCD /* Assets.xcassets */; };
@@ -27,6 +31,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		22A35CFF25A71A8C00AEAE03 /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
+		22A35D0225A71B2900AEAE03 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
+		22A35D0525A71B3B00AEAE03 /* ProfileActionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileActionButtonView.swift; sourceTree = "<group>"; };
+		22A35D0925A71B4D00AEAE03 /* FilterButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButtonView.swift; sourceTree = "<group>"; };
 		22F7D4EC25A5674B00997FCD /* TwitterSwiftUIPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterSwiftUIPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22F7D4EF25A5674B00997FCD /* TwitterSwiftUIPracticeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterSwiftUIPracticeApp.swift; sourceTree = "<group>"; };
 		22F7D4F125A5674B00997FCD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -59,6 +67,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		22A35CFD25A71A8000AEAE03 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				22A35CFF25A71A8C00AEAE03 /* UserProfileView.swift */,
+				22A35D0225A71B2900AEAE03 /* ProfileHeaderView.swift */,
+				22A35D0525A71B3B00AEAE03 /* ProfileActionButtonView.swift */,
+				22A35D0925A71B4D00AEAE03 /* FilterButtonView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		22F7D4E325A5674B00997FCD = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +127,7 @@
 		22F7D50025A57C1A00997FCD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				22A35CFD25A71A8000AEAE03 /* Profile */,
 				22F7D51225A599F000997FCD /* Messages */,
 				22F7D4F125A5674B00997FCD /* ContentView.swift */,
 				22F7D50225A57C3F00997FCD /* FeedView.swift */,
@@ -216,11 +236,15 @@
 				22F7D51E25A5A3AB00997FCD /* ChatView.swift in Sources */,
 				22F7D51425A599FE00997FCD /* ConversationsView.swift in Sources */,
 				22F7D4F025A5674B00997FCD /* TwitterSwiftUIPracticeApp.swift in Sources */,
+				22A35D0A25A71B4D00AEAE03 /* FilterButtonView.swift in Sources */,
 				22F7D52125A5AE9800997FCD /* ChatBubble.swift in Sources */,
 				22F7D50725A580AE00997FCD /* TweetCell.swift in Sources */,
 				22F7D52A25A5B55D00997FCD /* NewMessageView.swift in Sources */,
+				22A35D0325A71B2900AEAE03 /* ProfileHeaderView.swift in Sources */,
 				22F7D52425A5B15200997FCD /* Message.swift in Sources */,
+				22A35D0025A71A8C00AEAE03 /* UserProfileView.swift in Sources */,
 				22F7D50D25A58F6200997FCD /* SearchBar.swift in Sources */,
+				22A35D0625A71B3B00AEAE03 /* ProfileActionButtonView.swift in Sources */,
 				22F7D51025A5971800997FCD /* UserCell.swift in Sources */,
 				22F7D52725A5B44700997FCD /* MessageView.swift in Sources */,
 				22F7D51825A59A0F00997FCD /* ConversationCell.swift in Sources */,
