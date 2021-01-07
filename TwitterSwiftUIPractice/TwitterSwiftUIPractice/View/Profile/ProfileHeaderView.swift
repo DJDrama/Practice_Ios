@@ -41,7 +41,7 @@ struct ProfileHeaderView: View {
                         .foregroundColor(.gray)
                 }
                 VStack{
-                    Text("12")
+                    Text("240")
                         .font(.system(size: 16))
                         .bold()
                     
@@ -51,6 +51,8 @@ struct ProfileHeaderView: View {
                 }
             }
             .padding()
+            
+            ProfileActionButtonView(isCurrentUser: false)
             
             Spacer()
         }
