@@ -19,25 +19,57 @@ struct LoginView: View {
                     .scaledToFill()
                     .frame(width: 220, height: 100)
                     .padding(.top, 96)
+                    .padding(.bottom, 32)
                 
-                VStack{
-                    CustomTextField(text: $email, placeHolder: Text("Email"))
+                VStack(spacing: 24){
+                    CustomTextField(text: $email, placeHolder: Text("Email"), imageName: "envelope")
                         .padding()
                         .background(Color(.init(white: 1, alpha: 0.15)))
                         .cornerRadius(10)
-                        .padding()
                         .foregroundColor(.white)
                     
-                    CustomTextField(text: $password, placeHolder: Text("Password"))
+                    CustomSecureField(text: $password, placeHolder: Text("Password"))
                         .padding()
                         .background(Color(.init(white: 1, alpha: 0.15)))
                         .cornerRadius(10)
-                        .padding()
                         .foregroundColor(.white)
                 }
+                .padding(.horizontal, 32)
+                
+                HStack{
+                    Spacer()
+                    Button(action: {
+                        
+                    }, label: {
+                        Text("Forgot Password?")
+                            .font(.footnote)
+                            .bold()
+                            .foregroundColor(.white)
+                            .padding(.top, 16)
+                            .padding(.trailing, 32)
+                    })
+                }
+                
+                Button(action: {}, label: {
+                    Text("Sign In")
+                        .font(.headline)
+                        .foregroundColor(.blue)
+                        .frame(width: 360, height: 50)
+                        .background(Color.white)
+                        .clipShape(Capsule())
+                        .padding()
+                })
                 
                 Spacer()
                 
+                HStack{
+                    Text("Don't have an account?")
+                        .font(.system(size: 14))
+                    Text("Sign Up")
+                        .font(.system(size: 14, weight: .semibold))
+                }
+                .foregroundColor(.white)
+                .padding(.bottom, 40)
             }
             
         }
