@@ -11,7 +11,8 @@ import SwiftUI
 struct TwitterSwiftUIPracticeApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+//            ContentView()
+            LoginView()
         }
     }
 }
