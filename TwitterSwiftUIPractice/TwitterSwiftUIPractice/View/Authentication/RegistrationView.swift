@@ -12,21 +12,48 @@ struct RegistrationView: View {
     @State var password = ""
     @State var fullname = ""
     @State var username = ""
+    @State var showImagePicker = false
+    @State var selectedUIImage: UIImage?
+    @State var image: Image?
+    
     
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
+    
+    func loadImage(){
+        guard let selectedImage = selectedUIImage else { return }
+        image = Image(uiImage: selectedImage)
+    }
     
     var body: some View {
         ZStack {
             VStack{
                 
-                Image("plus_photo")
-                    .resizable()
-                    .renderingMode(.template)
-                    .scaledToFill()
-                    .frame(width: 140, height: 140)
-                    .padding(.top, 88)
-                    .padding(.bottom, 16)
-                    .foregroundColor(.white)
+                Button(action: {
+                    showImagePicker.toggle()
+                }, label: {
+                    ZStack{
+                        if let image = image{
+                            image
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 140, height: 140)
+                                .clipShape(Circle())
+                                .padding(.top, 88)
+                                .padding(.bottom, 16)
+                        }else{
+                            Image("plus_photo")
+                                .resizable()
+                                .renderingMode(.template)
+                                .scaledToFill()
+                                .frame(width: 140, height: 140)
+                                .padding(.top, 88)
+                                .padding(.bottom, 16)
+                                .foregroundColor(.white)
+                        }
+                    }
+                }).sheet(isPresented: $showImagePicker, onDismiss: loadImage, content: {
+                    ImagePicker(image: $selectedUIImage)
+                })
                 
                 VStack(spacing: 24){
                     CustomTextField(text: $fullname, placeHolder: Text("Full Name"), imageName: "person")
@@ -69,7 +96,7 @@ struct RegistrationView: View {
                 
                 Spacer()
                 
-    
+                
                 Button(action: {
                     mode.wrappedValue.dismiss()
                 }, label: {
