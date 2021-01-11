@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct SearchView: View {
-    @State
-    var searchText: String = ""
+    @State var searchText: String = ""
     
     @ObservedObject var viewModel = SearchViewModel()
     
@@ -23,12 +22,10 @@ struct SearchView: View {
                     HStack{Spacer()}
                     
                     NavigationLink(
-                        destination: UserProfileView(),
+                        destination: UserProfileView(user: user),
                         label: {
                             UserCell(user: user)
                         })
-                    
-                    
                 }
             }.padding(.leading)
         }
