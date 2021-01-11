@@ -9,7 +9,6 @@ import SwiftUI
 
 struct FeedView: View {
     @State var isShowingNewTweetView = false
-
     var body: some View {
         ZStack(alignment: .bottomTrailing){
             ScrollView{
