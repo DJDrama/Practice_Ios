@@ -18,6 +18,7 @@ struct ContentView: View {
                     NavigationView{
                         FeedView()
                             //.navigationBarHidden(true)
+                            
                             .navigationBarTitle("Home")
                             .navigationBarItems(leading: Button(action: {
                                 viewModel.signOut()
@@ -32,6 +33,7 @@ struct ContentView: View {
                                 }
                             }))
                             .navigationBarTitleDisplayMode(.inline)
+                            
                         //.edgesIgnoringSafeArea([.top, .bottom])
                     }.tabItem {
                         Image(systemName: "house")

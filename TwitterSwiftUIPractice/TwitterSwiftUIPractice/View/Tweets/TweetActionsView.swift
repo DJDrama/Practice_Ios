@@ -8,6 +8,14 @@
 import SwiftUI
 
 struct TweetActionsView: View {
+    let tweet: Tweet
+    @ObservedObject var viewModel : TweetActionViewModel
+    
+    init(tweet: Tweet){
+        self.tweet = tweet
+        self.viewModel = TweetActionViewModel(tweet: tweet)
+    }
+    
     var body: some View {
         HStack{
             Button(action: {}, label: {
@@ -22,10 +30,13 @@ struct TweetActionsView: View {
                     .frame(width: 32, height: 32)
             })
             Spacer()
-            Button(action: {}, label: {
-                Image(systemName: "heart")
+            Button(action: {
+                viewModel.didLike ? viewModel.unlikeTweet() : viewModel.likeTweet()
+            }, label: {
+                Image(systemName: viewModel.didLike ? "heart.fill" : "heart")
                     .font(.system(size:16))
                     .frame(width: 32, height: 32)
+                    .foregroundColor(viewModel.didLike ? .red : .gray)
             })
             Spacer()
             Button(action: {}, label: {
@@ -37,11 +48,5 @@ struct TweetActionsView: View {
         .foregroundColor(.gray)
         .padding(.horizontal)
         
-    }
-}
-
-struct TweetActionsView_Previews: PreviewProvider {
-    static var previews: some View {
-        TweetActionsView()
     }
 }
