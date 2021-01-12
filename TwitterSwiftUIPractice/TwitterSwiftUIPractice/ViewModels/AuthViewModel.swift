@@ -14,6 +14,8 @@ class AuthViewModel: ObservableObject{
     @Published var error: Error?
     @Published var user: User?
     
+    static let shared = AuthViewModel()
+    
     init(){
         userSession = Auth.auth().currentUser
         fetchUser()
@@ -26,6 +28,7 @@ class AuthViewModel: ObservableObject{
                 return
             }
             self.userSession = result?.user
+            self.fetchUser()
         }
     }
     
@@ -63,7 +66,7 @@ class AuthViewModel: ObservableObject{
                         //print("DEBUG: Succesfully uploaded user data...")
                         // login
                         self.userSession = result?.user
-                        
+                        self.fetchUser()
                     }
                 }
             }
