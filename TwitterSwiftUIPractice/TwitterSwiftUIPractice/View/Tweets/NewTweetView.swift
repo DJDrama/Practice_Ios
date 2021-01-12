@@ -11,7 +11,12 @@ import Kingfisher
 struct NewTweetView: View {
     @Binding var isPresented: Bool
     @State var captionText: String = ""
-    @ObservedObject var viewModel = UploadTweetViewModel()
+    @ObservedObject var viewModel:  UploadTweetViewModel
+    
+    init(isPresented: Binding<Bool>){
+        self._isPresented = isPresented
+        self.viewModel = UploadTweetViewModel(isPresented: isPresented)
+    }
     
     var body: some View {
         NavigationView{
@@ -39,6 +44,9 @@ struct NewTweetView: View {
                 }), trailing:
                     Button(action: {
                         viewModel.uploadTweet(caption: captionText)
+//                        viewModel.uploadTweet(caption: captionText) { (error) in
+//                            isPresented.toggle()
+//                        }
                 }, label: {
                     Text("Tweet")
                         .padding(.horizontal)
