@@ -49,7 +49,8 @@ struct ContentView: View {
                     }
                     NavigationView{
                         ConversationsView()
-                            .navigationBarHidden(true)
+                            .navigationBarTitle("Messages")
+                            .navigationBarTitleDisplayMode(.inline)
                     }.tabItem {
                         Image(systemName: "envelope")
                         Text("Message")

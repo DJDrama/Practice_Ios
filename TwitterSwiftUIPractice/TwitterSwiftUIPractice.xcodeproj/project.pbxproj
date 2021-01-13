@@ -37,6 +37,7 @@
 		22A35D5C25AD94A800AEAE03 /* TweetActionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A35D5B25AD94A800AEAE03 /* TweetActionViewModel.swift */; };
 		22A35D6025ADAA3100AEAE03 /* LazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A35D5F25ADAA3100AEAE03 /* LazyView.swift */; };
 		22A35D6325AEA85400AEAE03 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A35D6225AEA85300AEAE03 /* ChatViewModel.swift */; };
+		22A35D6625AEACB700AEAE03 /* ConversationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A35D6525AEACB700AEAE03 /* ConversationsViewModel.swift */; };
 		22F7D4F025A5674B00997FCD /* TwitterSwiftUIPracticeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F7D4EF25A5674B00997FCD /* TwitterSwiftUIPracticeApp.swift */; };
 		22F7D4F225A5674B00997FCD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F7D4F125A5674B00997FCD /* ContentView.swift */; };
 		22F7D4F425A5674D00997FCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22F7D4F325A5674D00997FCD /* Assets.xcassets */; };
@@ -82,6 +83,7 @@
 		22A35D5B25AD94A800AEAE03 /* TweetActionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetActionViewModel.swift; sourceTree = "<group>"; };
 		22A35D5F25ADAA3100AEAE03 /* LazyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyView.swift; sourceTree = "<group>"; };
 		22A35D6225AEA85300AEAE03 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		22A35D6525AEACB700AEAE03 /* ConversationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsViewModel.swift; sourceTree = "<group>"; };
 		22F7D4EC25A5674B00997FCD /* TwitterSwiftUIPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterSwiftUIPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22F7D4EF25A5674B00997FCD /* TwitterSwiftUIPracticeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterSwiftUIPracticeApp.swift; sourceTree = "<group>"; };
 		22F7D4F125A5674B00997FCD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 				22A35D4F25AD756200AEAE03 /* FeedViewModel.swift */,
 				22A35D5B25AD94A800AEAE03 /* TweetActionViewModel.swift */,
 				22A35D6225AEA85300AEAE03 /* ChatViewModel.swift */,
+				22A35D6525AEACB700AEAE03 /* ConversationsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -379,6 +382,7 @@
 				22A35D3825AC0B7300AEAE03 /* User.swift in Sources */,
 				22F7D50D25A58F6200997FCD /* SearchBar.swift in Sources */,
 				22A35D0625A71B3B00AEAE03 /* ProfileActionButtonView.swift in Sources */,
+				22A35D6625AEACB700AEAE03 /* ConversationsViewModel.swift in Sources */,
 				22A35D1F25A82B0A00AEAE03 /* CustomTextField.swift in Sources */,
 				22F7D51025A5971800997FCD /* UserCell.swift in Sources */,
 				22A35D2225A82D9200AEAE03 /* CustomSecureField.swift in Sources */,

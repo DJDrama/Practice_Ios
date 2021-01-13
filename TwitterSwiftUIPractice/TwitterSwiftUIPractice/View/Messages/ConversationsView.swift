@@ -11,26 +11,28 @@ struct ConversationsView: View {
     @State // reactive
     var isShowingNewMessageView = false
     
-    @State
-    var showChat = false
+    @State var showChat = false
+    @State private var inSearchMode = false
+    
+    @ObservedObject var viewModel = ConversationsViewModel()
+    
     
     var body: some View {
         ZStack(alignment: .bottomTrailing){
 //            NavigationLink(
-//                destination: ChatView(),
+//                destination: ChatView(user: ),
 //                isActive: $showChat,
 //                label: {
 //
 //                })
             ScrollView{
                 LazyVStack{
-                    ForEach(0..<20) { _ in
-                        ConversationCell()
-//                        NavigationLink(
-//                            destination: ChatView(),
-//                            label: {
-//                                ConversationCell()
-//                            })
+                    ForEach(viewModel.recentMessages) { message in
+                        NavigationLink(
+                            destination: ChatView(user: message.user),
+                            label: {
+                                ConversationCell(message: message)
+                            })
                     }
                 }.padding()
             }

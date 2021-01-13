@@ -28,7 +28,9 @@ struct ChatView: View {
             }.padding(.top)
             MessageInputView(messageText: $messageText, action: sendMessage)
                 .padding()
+                
         }
+        .navigationTitle(user.username)
     }
     func sendMessage(){
         viewModel.sendMessage(messageText)
