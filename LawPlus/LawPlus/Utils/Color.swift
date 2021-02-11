@@ -8,6 +8,8 @@
 import SwiftUI
 
 let COLOR_GRAY = "#c7c7c7"
+let COLOR_WARM_BLUE = "#5261db"
+let COLOR_GRAYISH_BROWN="#404040"
 
 extension Color {
     init(hex: String) {

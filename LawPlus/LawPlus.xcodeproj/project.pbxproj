@@ -12,6 +12,8 @@
 		22558E4925D50D0A00687FC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22558E4825D50D0A00687FC8 /* Assets.xcassets */; };
 		22558E4C25D50D0A00687FC8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22558E4B25D50D0A00687FC8 /* Preview Assets.xcassets */; };
 		22558E5525D5121500687FC8 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22558E5425D5121500687FC8 /* Color.swift */; };
+		22558E5C25D515B500687FC8 /* LawCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22558E5B25D515B500687FC8 /* LawCardView.swift */; };
+		22558E6025D519B100687FC8 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22558E5F25D519B100687FC8 /* ContentViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		22558E4B25D50D0A00687FC8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		22558E4D25D50D0B00687FC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22558E5425D5121500687FC8 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		22558E5B25D515B500687FC8 /* LawCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LawCardView.swift; sourceTree = "<group>"; };
+		22558E5F25D519B100687FC8 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,9 +58,11 @@
 		22558E4325D50D0800687FC8 /* LawPlus */ = {
 			isa = PBXGroup;
 			children = (
-				22558E5425D5121500687FC8 /* Color.swift */,
+				22558E5925D5140600687FC8 /* Utils */,
+				22558E5725D513F300687FC8 /* Model */,
+				22558E5825D513F900687FC8 /* View */,
+				22558E5E25D5199900687FC8 /* ViewModel */,
 				22558E4425D50D0800687FC8 /* LawPlusApp.swift */,
-				22558E4625D50D0800687FC8 /* ContentView.swift */,
 				22558E4825D50D0A00687FC8 /* Assets.xcassets */,
 				22558E4D25D50D0B00687FC8 /* Info.plist */,
 				22558E4A25D50D0A00687FC8 /* Preview Content */,
@@ -70,6 +76,38 @@
 				22558E4B25D50D0A00687FC8 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		22558E5725D513F300687FC8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		22558E5825D513F900687FC8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				22558E4625D50D0800687FC8 /* ContentView.swift */,
+				22558E5B25D515B500687FC8 /* LawCardView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		22558E5925D5140600687FC8 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				22558E5425D5121500687FC8 /* Color.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		22558E5E25D5199900687FC8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				22558E5F25D519B100687FC8 /* ContentViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,8 +180,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				22558E4725D50D0800687FC8 /* ContentView.swift in Sources */,
+				22558E5C25D515B500687FC8 /* LawCardView.swift in Sources */,
 				22558E4525D50D0800687FC8 /* LawPlusApp.swift in Sources */,
 				22558E5525D5121500687FC8 /* Color.swift in Sources */,
+				22558E6025D519B100687FC8 /* ContentViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
