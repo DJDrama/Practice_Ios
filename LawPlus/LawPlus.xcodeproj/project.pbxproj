@@ -16,6 +16,7 @@
 		22558E6025D519B100687FC8 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22558E5F25D519B100687FC8 /* ContentViewModel.swift */; };
 		22558E6425D51BE800687FC8 /* LawItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22558E6325D51BE800687FC8 /* LawItem.swift */; };
 		22558E6725D51D6400687FC8 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22558E6625D51D6400687FC8 /* Data.swift */; };
+		22558E6A25D52E8500687FC8 /* MemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22558E6925D52E8500687FC8 /* MemoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		22558E5F25D519B100687FC8 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		22558E6325D51BE800687FC8 /* LawItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LawItem.swift; sourceTree = "<group>"; };
 		22558E6625D51D6400687FC8 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		22558E6925D52E8500687FC8 /* MemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			children = (
 				22558E4625D50D0800687FC8 /* ContentView.swift */,
 				22558E5B25D515B500687FC8 /* LawCardView.swift */,
+				22558E6925D52E8500687FC8 /* MemoView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 			files = (
 				22558E6725D51D6400687FC8 /* Data.swift in Sources */,
 				22558E4725D50D0800687FC8 /* ContentView.swift in Sources */,
+				22558E6A25D52E8500687FC8 /* MemoView.swift in Sources */,
 				22558E6425D51BE800687FC8 /* LawItem.swift in Sources */,
 				22558E5C25D515B500687FC8 /* LawCardView.swift in Sources */,
 				22558E4525D50D0800687FC8 /* LawPlusApp.swift in Sources */,
