@@ -9,6 +9,7 @@ import SwiftUI
 
 struct LawCardView: View {
     @State private var isStarPressed = false
+    let lawItem: LawItem
     
     var body: some View {
         VStack{
@@ -23,7 +24,7 @@ struct LawCardView: View {
                 
                 VStack(alignment: .leading, spacing: 10){
                     HStack{
-                        Text("제 1조(법원)")
+                        Text(lawItem.title)
                             .font(.system(size: 16, weight: .semibold))
                             .foregroundColor(Color.init(hex: COLOR_WARM_BLUE))
                         Spacer()
@@ -40,19 +41,25 @@ struct LawCardView: View {
                         .padding(.trailing, 20)
                     }
                     
-                    Text("민사에 관하여 법률에 규정이 없으면 관습법에 의하고 관습법이 없으면 조리에 의한다.")
-                        .padding(.trailing, 64)
-                        .foregroundColor(Color.init(hex: COLOR_GRAYISH_BROWN))
-                        .font(.system(size: 14))
+                    LazyVStack(alignment: .leading){
+                        ForEach(lawItem.content, id: \.self){str in
+                            Text(str)
+                                .foregroundColor(Color.init(hex: COLOR_GRAYISH_BROWN))
+                                .font(.system(size: 14))
+                                .padding(.bottom, 10)
+                        }
+                    }
+                    .padding(.trailing, 64)
                 }
             }
         }
         .padding(.vertical, 30)
+        
     }
 }
 
 struct LawCardView_Previews: PreviewProvider {
     static var previews: some View {
-        LawCardView()
+        LawCardView(lawItem: LawItem(lawType: CI, article: "1조", title: "제1조(법원)", content: ["민사에 관하여 법률에 규정이 없으면 관습법에 의하고 관습법이 없으면 조리에 의한다."]))
     }
 }

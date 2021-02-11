@@ -7,9 +7,10 @@
 
 import SwiftUI
 
-let COLOR_GRAY = "#c7c7c7"
+let COLOR_PINKISH_GRAY = "#c7c7c7"
 let COLOR_WARM_BLUE = "#5261db"
 let COLOR_GRAYISH_BROWN="#404040"
+let COLOR_GREYISH = "#a7a7a7"
 
 extension Color {
     init(hex: String) {

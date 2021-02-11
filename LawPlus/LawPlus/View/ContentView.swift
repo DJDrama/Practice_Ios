@@ -8,14 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
-    
+    @StateObject private var viewModel = ContentViewModel()
     @State private var lawTerm: String = "법령조회"
     @State private var searchQuery: String = ""
     
     var body: some View {
         ScrollView{
-            
-            
             VStack{
                 ZStack(alignment:.trailing){
                     HStack{
@@ -40,29 +38,43 @@ struct ContentView: View {
                         })
                     }
                     .frame(width: 62)
-                    .foregroundColor(Color.init(hex: COLOR_GRAY))
+                    .foregroundColor(Color.init(hex: COLOR_PINKISH_GRAY))
                     Image("down")
                     
                     Spacer().frame(width: 25)
                     
                     TextField("검색어를 입력하세요.", text: $searchQuery)
-                    Image("search")
-                        .resizable()
-                        .frame(width: 20, height: 20)
+                        .onChange(of: searchQuery){query in
+                            if query.isEmpty {
+                                    viewModel.fetchItems()
+                            }
+                        }
+                    
+                    Button(action: {
+                        viewModel.searchQuery(query: searchQuery)
+                    }, label: {
+                        Image("search")
+                            .resizable()
+                            .frame(width: 20, height: 20)
+                    })
+                  
                 }.padding(.horizontal, 20)
                 .padding(.top, 16)
                 
                 HStack{
-                    Rectangle().fill(Color.init(hex: COLOR_GRAY)).frame(width: 85, height: 1)
+                    Rectangle().fill(Color.init(hex: COLOR_PINKISH_GRAY)).frame(width: 85, height: 1)
                     Spacer().frame(width: 25)
-                    Rectangle().fill(Color.init(hex: COLOR_GRAY)).frame(height: 1)
+                    Rectangle().fill(Color.init(hex: COLOR_PINKISH_GRAY)).frame(height: 1)
                 }.padding(.horizontal, 20)
                 
             }
             .padding(.vertical, 4)
             
             LazyVStack{
-                
+                ForEach(viewModel.lawItems, id: \.self){item in
+                    LawCardView(lawItem: item)
+                    Rectangle().fill(Color.init(hex: COLOR_PINKISH_GRAY)).frame(height: 4)
+                }
             }
         }
     }
