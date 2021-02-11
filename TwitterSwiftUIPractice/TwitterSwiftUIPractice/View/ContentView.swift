@@ -14,49 +14,7 @@ struct ContentView: View {
     var body: some View {
         Group{
             if viewModel.userSession != nil {
-                TabView{
-                    NavigationView{
-                        FeedView()
-                            //.navigationBarHidden(true)
-                            
-                            .navigationBarTitle("Home")
-                            .navigationBarItems(leading: Button(action: {
-                                viewModel.signOut()
-                            }, label: {
-                                if let user = viewModel.user {
-                                    KFImage(URL(string: user.profileImageUrl))
-                                        .resizable()
-                                        .scaledToFill()
-                                        .clipped()
-                                        .frame(width: 32, height: 32)
-                                        .cornerRadius(16)
-                                }
-                            }))
-                            .navigationBarTitleDisplayMode(.inline)
-                            
-                        //.edgesIgnoringSafeArea([.top, .bottom])
-                    }.tabItem {
-                        Image(systemName: "house")
-                        Text("Home")
-                    }
-                    
-                    NavigationView{
-                        SearchView()
-                            .navigationBarHidden(true)
-                    }.tabItem {
-                        Image(systemName: "magnifyingglass")
-                        Text("Search")
-                    }
-                    NavigationView{
-                        ConversationsView()
-                            .navigationBarTitle("Messages")
-                            .navigationBarTitleDisplayMode(.inline)
-                    }.tabItem {
-                        Image(systemName: "envelope")
-                        Text("Message")
-                    }
-                }
-                
+                MainView()
                 
             }else{
                 LoginView()
