@@ -72,7 +72,7 @@ struct ContentView: View {
             
             LazyVStack{
                 ForEach(viewModel.lawItems, id: \.self){item in
-                    LawCardView(viewModel: viewModel, lawItem: item)
+                    LawCardView(lawItem: item).environmentObject(viewModel)
                     Rectangle().fill(Color.init(hex: COLOR_PINKISH_GRAY)).frame(height: 4)
                 }
             }

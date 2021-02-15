@@ -17,6 +17,9 @@
 		22558E6425D51BE800687FC8 /* LawItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22558E6325D51BE800687FC8 /* LawItem.swift */; };
 		22558E6725D51D6400687FC8 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22558E6625D51D6400687FC8 /* Data.swift */; };
 		22558E6A25D52E8500687FC8 /* MemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22558E6925D52E8500687FC8 /* MemoView.swift */; };
+		22558E7225DA30BD00687FC8 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 22558E7025DA30BD00687FC8 /* DataModel.xcdatamodeld */; };
+		22558E9225DA43D200687FC8 /* Memo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22558E9025DA43D200687FC8 /* Memo+CoreDataClass.swift */; };
+		22558E9325DA43D200687FC8 /* Memo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22558E9125DA43D200687FC8 /* Memo+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		22558E6325D51BE800687FC8 /* LawItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LawItem.swift; sourceTree = "<group>"; };
 		22558E6625D51D6400687FC8 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		22558E6925D52E8500687FC8 /* MemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoView.swift; sourceTree = "<group>"; };
+		22558E7125DA30BD00687FC8 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		22558E9025DA43D200687FC8 /* Memo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Memo+CoreDataClass.swift"; path = "../../Memo+CoreDataClass.swift"; sourceTree = "<group>"; };
+		22558E9125DA43D200687FC8 /* Memo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Memo+CoreDataProperties.swift"; path = "../../Memo+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +70,7 @@
 		22558E4325D50D0800687FC8 /* LawPlus */ = {
 			isa = PBXGroup;
 			children = (
+				22558E7925DA317B00687FC8 /* Persistence */,
 				22558E5925D5140600687FC8 /* Utils */,
 				22558E5725D513F300687FC8 /* Model */,
 				22558E5825D513F900687FC8 /* View */,
@@ -117,6 +124,16 @@
 				22558E5F25D519B100687FC8 /* ContentViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		22558E7925DA317B00687FC8 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				22558E9025DA43D200687FC8 /* Memo+CoreDataClass.swift */,
+				22558E9125DA43D200687FC8 /* Memo+CoreDataProperties.swift */,
+				22558E7025DA30BD00687FC8 /* DataModel.xcdatamodeld */,
+			);
+			path = Persistence;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,12 +206,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				22558E6725D51D6400687FC8 /* Data.swift in Sources */,
+				22558E7225DA30BD00687FC8 /* DataModel.xcdatamodeld in Sources */,
 				22558E4725D50D0800687FC8 /* ContentView.swift in Sources */,
 				22558E6A25D52E8500687FC8 /* MemoView.swift in Sources */,
 				22558E6425D51BE800687FC8 /* LawItem.swift in Sources */,
+				22558E9225DA43D200687FC8 /* Memo+CoreDataClass.swift in Sources */,
 				22558E5C25D515B500687FC8 /* LawCardView.swift in Sources */,
 				22558E4525D50D0800687FC8 /* LawPlusApp.swift in Sources */,
 				22558E5525D5121500687FC8 /* Color.swift in Sources */,
+				22558E9325DA43D200687FC8 /* Memo+CoreDataProperties.swift in Sources */,
 				22558E6025D519B100687FC8 /* ContentViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -382,6 +402,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		22558E7025DA30BD00687FC8 /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				22558E7125DA30BD00687FC8 /* DataModel.xcdatamodel */,
+			);
+			currentVersion = 22558E7125DA30BD00687FC8 /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 22558E3925D50D0800687FC8 /* Project object */;
 }

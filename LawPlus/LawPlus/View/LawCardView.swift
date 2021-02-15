@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct LawCardView: View {
-    @State private var isStarPressed = false
-    @State private var memoCount=0
-    let viewModel: ContentViewModel
-    let lawItem: LawItem
+    @EnvironmentObject var viewModel: ContentViewModel
     
+    var lawItem: LawItem
+    
+    @State private var isStarPressed = false
+    @State var memoCount: Int = 0
+
     var body: some View {
         VStack{
             HStack(alignment: .top){
@@ -32,6 +34,7 @@ struct LawCardView: View {
                         Spacer()
                         Button(action: {
                             memoCount += 1
+                            viewModel.saveMemo(title: lawItem.title, query: "", index: memoCount)
                         }, label: {
                             Text("메모")
                                 .font(.system(size: 14))
@@ -55,9 +58,10 @@ struct LawCardView: View {
                     
                     LazyVStack{
                         ForEach(0 ..< memoCount, id: \.self) { index in
-                            MemoView(memoCount: index)
+                            MemoView(lawItem: lawItem, memoCount: index)
                                 .padding(.bottom, 8)
                                 .padding(.trailing, 20)
+                                .environmentObject(viewModel)
                         }
                     }
                 }
@@ -67,9 +71,9 @@ struct LawCardView: View {
         
     }
 }
-
-struct LawCardView_Previews: PreviewProvider {
-    static var previews: some View {
-        LawCardView(viewModel: ContentViewModel(), lawItem: LawItem(lawType: CI, article: "1조", title: "제1조(법원)", content: ["민사에 관하여 법률에 규정이 없으면 관습법에 의하고 관습법이 없으면 조리에 의한다."]))
-    }
-}
+//
+//struct LawCardView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        LawCardView(memoCount: 0, viewModel: ContentViewModel(), lawItem: LawItem(lawType: CI, article: "1조", title: "제1조(법원)", content: ["민사에 관하여 법률에 규정이 없으면 관습법에 의하고 관습법이 없으면 조리에 의한다."]))
+//    }
+//}

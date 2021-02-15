@@ -13,4 +13,5 @@ struct LawItem: Hashable{
     let article: String
     let title: String
     let content: [String]
+    let memo: [String]? = nil
 }

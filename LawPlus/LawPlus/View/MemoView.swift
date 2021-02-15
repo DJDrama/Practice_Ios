@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct MemoView: View {
+    @EnvironmentObject var viewModel: ContentViewModel
     @State private var text = ""
+    let lawItem: LawItem
     let memoCount: Int
+    
     var body: some View {
         if  memoCount < 3 {
             VStack(alignment: .trailing){
@@ -21,7 +24,7 @@ struct MemoView: View {
                             .padding(8)
                             .frame(width: 28, height: 28)
                             .background(Color.init(hex: COLOR_WARM_BLUE))
-                            
+                        
                     }else if memoCount == 1 {
                         Text("判")
                             .foregroundColor(.white)
@@ -29,7 +32,7 @@ struct MemoView: View {
                             .padding(8)
                             .frame(width: 28, height: 28)
                             .background(Color.init(hex: COLOR_WARM_BLUE))
-                            
+                        
                     }else if memoCount==2{
                         Text("+")
                             .foregroundColor(.white)
@@ -37,15 +40,16 @@ struct MemoView: View {
                             .padding(8)
                             .frame(width: 28, height: 28)
                             .background(Color.init(hex: COLOR_WARM_BLUE))
-                            
+                        
                     }
                     
                     VStack{
                         HStack{
                             TextField("입력하세요.", text: $text)
                                 .font(.system(size: 14))
+                            
                             Button(action: {
-                                
+                               // viewModel.saveQuery(self.lawItem.title, self.text)
                                 
                             }, label: {
                                 Text("확인")
@@ -61,11 +65,5 @@ struct MemoView: View {
                 
             }
         }
-    }
-}
-
-struct MemoView_Previews: PreviewProvider {
-    static var previews: some View {
-        MemoView(memoCount: 0)
     }
 }
