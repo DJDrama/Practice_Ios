@@ -25,7 +25,7 @@ struct MemoView: View {
     
     var body: some View {
         VStack(alignment: .trailing){
-            HStack{
+            HStack(alignment: .top){
                 if memoCount == 0 {
                     Text("法")
                         .foregroundColor(.white)
@@ -54,10 +54,12 @@ struct MemoView: View {
                 
                 VStack{
                     HStack{
-                        TextField("입력하세요.", text: $text)
+                        TextEditor(text: $text)
                             .font(.system(size: 14))
+                            
                         
                         Button(action: {
+                            self.hideKeyboard()
                             if !originalString.isEmpty{
                                 if text.isEmpty{
                                     // delete

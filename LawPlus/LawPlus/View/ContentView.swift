@@ -55,6 +55,7 @@ struct ContentView: View {
                             return
                         }
                         viewModel.searchQuery(query: searchQuery)
+                        self.hideKeyboard()
                     }, label: {
                         Image("search")
                             .resizable()
