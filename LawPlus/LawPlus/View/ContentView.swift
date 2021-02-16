@@ -46,11 +46,14 @@ struct ContentView: View {
                     TextField("검색어를 입력하세요.", text: $searchQuery)
                         .onChange(of: searchQuery){query in
                             if query.isEmpty {
-                                    viewModel.fetchItems()
+                                viewModel.fetchItems()
                             }
                         }
                     
                     Button(action: {
+                        if searchQuery.isEmpty{
+                            return
+                        }
                         viewModel.searchQuery(query: searchQuery)
                     }, label: {
                         Image("search")

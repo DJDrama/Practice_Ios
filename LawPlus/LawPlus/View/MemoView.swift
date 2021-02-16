@@ -49,7 +49,10 @@ struct MemoView: View {
                                 .font(.system(size: 14))
                             
                             Button(action: {
-                               // viewModel.saveQuery(self.lawItem.title, self.text)
+                                if text.isEmpty {
+                                    return
+                                }
+                                viewModel.saveData(title: lawItem.title, query: text, index: memoCount)
                                 
                             }, label: {
                                 Text("확인")

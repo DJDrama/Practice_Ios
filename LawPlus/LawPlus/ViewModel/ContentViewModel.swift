@@ -12,10 +12,10 @@ import CoreData
 class ContentViewModel: ObservableObject {
     @Published
     var lawItems = [LawItem]()
-    @Environment(\.managedObjectContext)
-    private var moc
-    @FetchRequest(entity: Memo.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Memo.id, ascending: true)])
-    private var memos: FetchedResults<Memo>
+    
+    
+    let context = PersistentController.shared.persistentContainer.viewContext
+    
     
     init() {
         fetchItems()
@@ -23,6 +23,7 @@ class ContentViewModel: ObservableObject {
     
     func fetchItems(){
         lawItems = lawData
+        readData()
     }
     
     func searchQuery(query queryStr: String){
@@ -37,21 +38,35 @@ class ContentViewModel: ObservableObject {
                 }
             }
         }
-        
         lawItems = Array(searchedSet)
     }
+
     
-    func saveMemo(title: String, query: String, index: Int){
-        let memo = Memo(context: self.moc)
-        memo.title = title
-        memo.memo = query
-        memo.memoIndex = NSDecimalNumber(value: index)
+    
+    // CRUD
+    func readData(){
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Memo")
         do{
-            try self.moc.save()
+            let results = try context.fetch(request)
+         //   self.data = results as! [NSManagedObject]
+            print("FUCK \(results.count)")
         }catch{
-            print("ERROR \(error.localizedDescription)")
+            print(error.localizedDescription)
         }
     }
     
+    func saveData(title: String, query: String, index: Int){
+        let entity = NSEntityDescription.insertNewObject(forEntityName: "Memo", into: context)
+        entity.setValue(title, forKey: "title")
+        entity.setValue(query, forKey: "memo")
+        entity.setValue(index, forKey: "memoIndex")
+        
+        do{
+            try context.save()
+            //self.data.append(entity)
+        }catch{
+            print(error.localizedDescription)
+        }
+    }
  
 }

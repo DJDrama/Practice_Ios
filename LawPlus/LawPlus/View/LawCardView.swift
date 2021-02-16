@@ -34,7 +34,7 @@ struct LawCardView: View {
                         Spacer()
                         Button(action: {
                             memoCount += 1
-                            viewModel.saveMemo(title: lawItem.title, query: "", index: memoCount)
+                            //viewModel.saveMemo(title: lawItem.title, query: "", index: memoCount)
                         }, label: {
                             Text("메모")
                                 .font(.system(size: 14))
@@ -59,6 +59,7 @@ struct LawCardView: View {
                     LazyVStack{
                         ForEach(0 ..< memoCount, id: \.self) { index in
                             MemoView(lawItem: lawItem, memoCount: index)
+                                .environmentObject(viewModel)
                                 .padding(.bottom, 8)
                                 .padding(.trailing, 20)
                                 .environmentObject(viewModel)
