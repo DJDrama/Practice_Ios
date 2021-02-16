@@ -74,8 +74,8 @@ struct ContentView: View {
             .padding(.vertical, 4)
             
             LazyVStack{
-                ForEach(viewModel.lawItems, id: \.self){item in
-                    LawCardView(lawItem: item).environmentObject(viewModel)
+                ForEach(viewModel.lawItems.keys.sorted(), id: \.self) { key in
+                    LawCardView(lawTitle: key, lawItem: viewModel.lawItems[key]!).environmentObject(viewModel)
                     Rectangle().fill(Color.init(hex: COLOR_PINKISH_GRAY)).frame(height: 4)
                 }
             }

@@ -11,7 +11,7 @@ import CoreData
 
 class ContentViewModel: ObservableObject {
     @Published
-    var lawItems = [LawItem]()
+    var lawItems = [String: LawItem]()
     
     
     let context = PersistentController.shared.persistentContainer.viewContext
@@ -27,29 +27,35 @@ class ContentViewModel: ObservableObject {
     }
     
     func searchQuery(query queryStr: String){
-        var searchedSet = Set<LawItem>()
-        for item in lawItems {
-            if(item.title.contains(queryStr)){
-                searchedSet.insert(item)
+        var searchedMap = [String : LawItem]()
+        for (key, value) in lawItems {
+            if key.contains(queryStr) {
+                searchedMap[key] = value
             }
-            for content in item.content {
-                if(content.contains(queryStr)){
-                    searchedSet.insert(item)
+            for content in value.content {
+                if content.contains(queryStr) {
+                    searchedMap[key] = value
                 }
             }
         }
-        lawItems = Array(searchedSet)
+        lawItems = searchedMap
     }
-
+    
     
     
     // CRUD
     func readData(){
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Memo")
         do{
-            let results = try context.fetch(request)
-         //   self.data = results as! [NSManagedObject]
-            print("FUCK \(results.count)")
+            let results = try context.fetch(request) as! [NSManagedObject]
+            for res in results {
+                let obj = res
+                let resTitle = obj.value(forKey: "title") as! String
+                let resIndex = obj.value(forKey: "memoIndex") as! Int
+                let resMemo = obj.value(forKey: "memo") as! String
+                
+                self.lawItems[resTitle]?.memo[resIndex] = resMemo
+            }
         }catch{
             print(error.localizedDescription)
         }
@@ -63,10 +69,55 @@ class ContentViewModel: ObservableObject {
         
         do{
             try context.save()
+            self.lawItems[title]?.memo[index] = query
             //self.data.append(entity)
         }catch{
             print(error.localizedDescription)
         }
     }
- 
+    
+    func updateData(title: String, query: String, index: Int){
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Memo")
+        do{
+            let results = try context.fetch(request) as! [NSManagedObject]
+            for res in results {
+                let obj = res
+                let resTitle = obj.value(forKey: "title") as! String
+                let resIndex = obj.value(forKey: "memoIndex") as! Int
+                if resTitle == title && resIndex == index {
+                    obj.setValue(query, forKey: "memo")
+                    
+                    try context.save()
+                    self.lawItems[title]?.memo[index] = query
+                    break
+                }
+            }
+            
+        }catch{
+            print(error.localizedDescription)
+        }
+    }
+    
+    func deleteData(title: String, index: Int){
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Memo")
+        do{
+            let results = try context.fetch(request) as! [NSManagedObject]
+            for res in results {
+                let obj = res
+                let resTitle = obj.value(forKey: "title") as! String
+                let resIndex = obj.value(forKey: "memoIndex") as! Int
+                if resTitle == title && resIndex == index {
+                    context.delete(obj)
+                    
+                    try context.save()
+                    break
+                }
+            }
+            
+        }catch{
+            print(error.localizedDescription)
+        }
+        
+    }
+    
 }

@@ -10,11 +10,13 @@ import SwiftUI
 struct LawCardView: View {
     @EnvironmentObject var viewModel: ContentViewModel
     
+    let lawTitle: String
     var lawItem: LawItem
     
     @State private var isStarPressed = false
-    @State var memoCount: Int = 0
-
+    @State private var memoCount: Int = 0
+    @State private var memoButtonPressed = false
+    
     var body: some View {
         VStack{
             HStack(alignment: .top){
@@ -28,12 +30,12 @@ struct LawCardView: View {
                 
                 VStack(alignment: .leading, spacing: 10){
                     HStack{
-                        Text(lawItem.title)
+                        Text(lawTitle)
                             .font(.system(size: 16, weight: .semibold))
                             .foregroundColor(Color.init(hex: COLOR_WARM_BLUE))
                         Spacer()
                         Button(action: {
-                            memoCount += 1
+                            memoButtonPressed.toggle()
                             //viewModel.saveMemo(title: lawItem.title, query: "", index: memoCount)
                         }, label: {
                             Text("메모")
@@ -57,8 +59,18 @@ struct LawCardView: View {
                     .padding(.trailing, 64)
                     
                     LazyVStack{
-                        ForEach(0 ..< memoCount, id: \.self) { index in
-                            MemoView(lawItem: lawItem, memoCount: index)
+                        if !(viewModel.lawItems[lawTitle]?.memo.isEmpty ?? false) || memoButtonPressed {
+                            MemoView(lawTitle: lawTitle, memoCount: 0, memoString: lawItem.memo[0] ?? "")
+                                .environmentObject(viewModel)
+                                .padding(.bottom, 8)
+                                .padding(.trailing, 20)
+                                .environmentObject(viewModel)
+                            MemoView(lawTitle: lawTitle, memoCount: 1, memoString: lawItem.memo[1] ?? "")
+                                .environmentObject(viewModel)
+                                .padding(.bottom, 8)
+                                .padding(.trailing, 20)
+                                .environmentObject(viewModel)
+                            MemoView(lawTitle: lawTitle, memoCount: 2, memoString: lawItem.memo[2] ?? "")
                                 .environmentObject(viewModel)
                                 .padding(.bottom, 8)
                                 .padding(.trailing, 20)
