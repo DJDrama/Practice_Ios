@@ -22,10 +22,10 @@ struct ContentView: View {
                             .frame(width: 58, height: 24)
                             .padding(.vertical, 8)
                     }.frame(maxWidth: .infinity)
-                    Image("profile")
-                        .resizable()
-                        .frame(width: 28, height: 28)
-                        .padding(.trailing, 20)
+//                    Image("profile")
+//                        .resizable()
+//                        .frame(width: 28, height: 28)
+//                        .padding(.trailing, 20)
                 }
                 
                 HStack{
@@ -36,9 +36,31 @@ struct ContentView: View {
                             Text("1조")
                                 .underline()
                         })
+                        
+                        Button(action: {
+                            lawTerm = "2조"
+                        }, label: {
+                            Text("2조")
+                                .underline()
+                        })
+                        
+                        Button(action: {
+                            lawTerm = "3조"
+                        }, label: {
+                            Text("3조")
+                                .underline()
+                        })
+                        
+                        Button(action: {
+                            lawTerm = "4조"
+                        }, label: {
+                            Text("4조")
+                                .underline()
+                        })
                     }
                     .frame(width: 62)
                     .foregroundColor(Color.init(hex: COLOR_PINKISH_GRAY))
+                    
                     Image("down")
                     
                     Spacer().frame(width: 25)

@@ -53,9 +53,12 @@ struct MemoView: View {
                 }
                 
                 VStack{
-                    HStack{
-                        TextEditor(text: $text)
+                    HStack(alignment: .top){
+                        ZStack{
+                            TextEditor(text: $text)
                             .font(.system(size: 14))
+                            Text(text).font(.system(size: 14)).padding(8).opacity(0)
+                        }
                             
                         
                         Button(action: {
@@ -88,7 +91,7 @@ struct MemoView: View {
                         })
                     }
                     Rectangle().fill(Color.init(hex: COLOR_PINKISH_GRAY)).frame(height: 1)
-                        .padding(.top, -2)
+                        .padding(.top, -4)
                 }
                 
             }
