@@ -26,17 +26,7 @@ struct Home: View {
     
     var body: some View {
         VStack(spacing: 0){
-            HStack{
-                Text("Pull To Refresh")
-                    .font(.largeTitle)
-                    .fontWeight(.heavy)
-                    .foregroundColor(.purple)
-                Spacer()
-            }
-            .padding()
-            .background(Color.white.ignoresSafeArea(.all, edges: .top))
-            
-            Divider()
+
             
             ScrollView(.vertical, showsIndicators: false, content: {
                 // geometry reader for calculating position
